@@ -10,8 +10,9 @@ breads.get('/', (req, res) => {
 // SHOW
 breads.get('/:arrayIndex', (req, res) => {
   const pickedBread = Bread[Number(req.params.arrayIndex)]
-})
   res.send(pickedBread)
 })
+  
+
 
 module.exports = breads
