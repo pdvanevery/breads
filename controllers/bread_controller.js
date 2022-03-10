@@ -10,8 +10,13 @@ breads.get('/', (req, res) => {
 
 // SHOW
 breads.get('/:arrayIndex', (req, res) => {
-  const pickedBread = Bread[Number(req.params.arrayIndex)]
-  res.send(pickedBread)
+  if (Bread[req.params.arrayIndex]) {
+    res.render('Show', {
+      bread:Bread[req.params.arrayIndex]
+    })
+  } else {
+    res.send('404')
+  }
 })
   
 
