@@ -31,6 +31,8 @@ breads.get('/:id', (req, res) => {
           res.render('show', {
               bread: foundBreads
           })
+      }).catch(err => {
+        res.render('404')
       })
 })
 
