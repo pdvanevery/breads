@@ -6,6 +6,7 @@ function Show ({bread}) {
     return (
       <Default>
         <h3>{bread.name}</h3>
+        <p>{bread.getBakedBy()}</p>
         <form action={`/breads/${bread.id}?_method=DELETE`} method="POST">
           <input type='submit' value="DELETE"/>
         </form>
