@@ -22,6 +22,7 @@ function Show ({bread}) {
         </p>
        <div>
         <img src={bread.image} alt={bread.name} />
+        {/* <p>Baked by {bread.baker}</p> */}
         </div>
         <li><a href='/breads'>Go home</a></li>
       </Default>
