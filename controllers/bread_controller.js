@@ -3,14 +3,23 @@ const breads = express.Router()
 const Bread = require('../models/bread.js')
 const Baker = require('../models/baker.js')
 
-// INDEX
+// Index:
 breads.get('/', (req, res) => {
-  Bread.find().then(foundBreads => {
-    res.render('index', {breads: foundBreads, title: 'Index Page'})
-  })
+  Baker.find()
+    .then(foundBakers => {
+      Bread.find()
+      .then(foundBreads => {
+          res.render('index', {
+              breads: foundBreads,
+              bakers: foundBakers,
+              title: 'Index Page'
+          })
+      })
+    })
+})
   
 // res.send(Bread)
-})
+
 
 // NEW
 breads.get('/new', (req, res) => {
