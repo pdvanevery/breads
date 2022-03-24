@@ -27,6 +27,7 @@ function Index ({breads, bakers, title})  {
               )
           })}
           </ul>
+          <a href={`/breads/new`}><button>New Bread</button></a>
   </Default>
   )
 }
